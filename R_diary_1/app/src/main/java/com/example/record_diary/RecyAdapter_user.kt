@@ -34,7 +34,7 @@ class RecyAdapter_user :RecyclerView.Adapter<RecyAdapter_user.MyViewHolder>,Filt
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyAdapter_user.MyViewHolder {
-        
+
         val itemView=LayoutInflater.from(parent.context).inflate(R.layout.new_listitem_recycler_user,parent,false)
         return MyViewHolder(itemView)
 
