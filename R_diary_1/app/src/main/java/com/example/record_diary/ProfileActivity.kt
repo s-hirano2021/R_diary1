@@ -132,9 +132,7 @@ class ProfileActivity : AppCompatActivity() {
             .addOnFailureListener { e->
 
             }
-
-
-
+        
     }
 
     // ユーザがログイン状態かの確認
