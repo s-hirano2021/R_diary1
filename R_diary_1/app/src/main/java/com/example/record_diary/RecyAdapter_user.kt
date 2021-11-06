@@ -34,10 +34,7 @@ class RecyAdapter_user :RecyclerView.Adapter<RecyAdapter_user.MyViewHolder>,Filt
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyAdapter_user.MyViewHolder {
-
-//        lateinit var db: FirebaseFirestore
-//        lateinit var DBrecy:RecordDB_Recy
-
+        
         val itemView=LayoutInflater.from(parent.context).inflate(R.layout.new_listitem_recycler_user,parent,false)
         return MyViewHolder(itemView)
 
