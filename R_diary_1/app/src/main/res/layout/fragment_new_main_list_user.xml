@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:windowSoftInputMode="adjustPan"
+    tools:context=".NewMainList">
+
+
+        <EditText
+            android:id="@+id/search_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/searchet_background"
+            android:drawableStart="@drawable/ic_search"
+            android:ems="10"
+            android:hint="search Title"
+            android:inputType="textPersonName"
+            android:paddingStart="20dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:windowSoftInputMode="adjustPan"
+            app:layout_constraintBottom_toTopOf="@+id/Recycler_List2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/Recycler_List2"
+            android:layout_width="400dp"
+            android:layout_height="500dp"
+            android:layout_marginTop="180dp"
+            android:layout_marginBottom="90dp"
+            android:background="@color/white"
+            android:fitsSystemWindows="true"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.769"
+            tools:listitem="@layout/new_listitem_recycler_user" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

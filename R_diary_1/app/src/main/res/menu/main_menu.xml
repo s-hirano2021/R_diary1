@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/newMainList_User"
+        android:icon="@drawable/ic_search_black_24dp"
+        android:title="リスト検索" />
+
+    <item
+        android:id="@+id/newMainList"
+        android:title="一覧画面"
+        android:icon="@drawable/ic_list"/>
+    <item
+        android:id="@+id/record_Fragment"
+        android:title="入力フォーム"
+        android:icon="@drawable/ic_add"/>
+
+
+</menu>

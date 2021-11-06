@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/newMainList">
+
+    <fragment
+        android:id="@+id/record_Fragment"
+        android:name="com.example.record_diary.Record_Fragment"
+        android:label="fragment_record_"
+        tools:layout="@layout/fragment_record_" >
+        <action
+            android:id="@+id/action_record_Fragment_to_newMainList"
+            app:destination="@id/newMainList" />
+    </fragment>
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="com.example.record_diary.LoginActivity"
+        android:label="activity_login"
+        tools:layout="@layout/activity_login" />
+    <fragment
+        android:id="@+id/newMainList"
+        android:name="com.example.record_diary.NewMainList"
+        android:label="fragment_new_main_list"
+        tools:layout="@layout/fragment_new_main_list" />
+    <fragment
+        android:id="@+id/newMainList_User"
+        android:name="com.example.record_diary.NewMainList_User"
+        android:label="NewMainList_User" />
+</navigation>
