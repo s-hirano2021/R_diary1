@@ -18,11 +18,11 @@ class RecyAdapter_user :RecyclerView.Adapter<RecyAdapter_user.MyViewHolder>,Filt
     lateinit var db: FirebaseFirestore
     lateinit var DBrecy:RecordDB_Recy
     private lateinit var auth: FirebaseAuth
+
     //filter
     private val context:Context
     public var categoryArrayList:ArrayList<RecordDB_Recy>
     private lateinit var filterList:ArrayList<RecordDB_Recy>
-
 
     private var filter : FilterCategory?=null
 
