@@ -59,21 +59,6 @@ class RecyAdapter_user :RecyclerView.Adapter<RecyAdapter_user.MyViewHolder>,Filt
                 .load(user.ImageDataUrl)
                 .into(holder.Recy_image)
 
-        holder.DeleteBtn.setOnClickListener {
-            Log.d("●●","Deleteボタンクリック")
-            val builder = AlertDialog.Builder(it.context)
-            builder.setTitle("削除")
-                .setMessage("この項目を削除しますか？")
-                .setPositiveButton("Yes"){a,d->
-                    Toast.makeText(it.context,"削除します。",Toast.LENGTH_SHORT).show()
-                    deleteRecord(user,holder,position)
-                }
-                .setNegativeButton("No"){a,d->
-                    a.dismiss()
-                }
-                 .show()
-        }
-
     }
 
     private fun deleteRecord(user: RecordDB_Recy, holder: MyViewHolder,position:Int) {
@@ -107,7 +92,6 @@ class RecyAdapter_user :RecyclerView.Adapter<RecyAdapter_user.MyViewHolder>,Filt
         val Recy_text_Name:TextView=itemView.findViewById(R.id.Recy_text_Name)
         val Recy_text_Caption:TextView=itemView.findViewById(R.id.Recy_text_Caption)
         val Recy_image: ImageView =itemView.findViewById(R.id.Recy_image)
-        val DeleteBtn: ImageButton =itemView.findViewById(R.id.deleteBtn)
     }
 
     override fun getFilter(): Filter {
