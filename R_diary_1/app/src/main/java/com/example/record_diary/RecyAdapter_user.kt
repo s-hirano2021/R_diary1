@@ -22,7 +22,7 @@ class RecyAdapter_user :RecyclerView.Adapter<RecyAdapter_user.MyViewHolder>,Filt
     private val context:Context
     public var categoryArrayList:ArrayList<RecordDB_Recy>
     private lateinit var filterList:ArrayList<RecordDB_Recy>
-    //filter
+    
 
     private var filter : FilterCategory?=null
 
