@@ -44,8 +44,6 @@ class RecyAdapter_user :RecyclerView.Adapter<RecyAdapter_user.MyViewHolder>,Filt
 
         db= FirebaseFirestore.getInstance()
 
-        //val user:RecordDB_Recy=userList[position]
-        //val user:RecordDB_Recy=filterList[position]
         val user:RecordDB_Recy=categoryArrayList[position]
         holder.Recy_text_TIme.text=user.Time
         holder.Recy_text_Name.text=user.Name
@@ -79,7 +77,7 @@ class RecyAdapter_user :RecyclerView.Adapter<RecyAdapter_user.MyViewHolder>,Filt
     }
 
     override fun getItemCount(): Int {
-        //return userList.size
+
         return categoryArrayList.size
     }
 

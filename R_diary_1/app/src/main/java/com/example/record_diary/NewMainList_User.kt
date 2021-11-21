@@ -132,8 +132,6 @@ class NewMainList_User : Fragment() {
             }
         })
 
-        //データ削除の処理はAdapterに記述
-
     }
 
 }

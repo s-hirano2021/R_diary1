@@ -3,9 +3,6 @@ package com.example.record_diary
 import android.app.Activity.RESULT_OK
 import android.app.ProgressDialog
 import android.content.Intent
-import android.graphics.BitmapFactory
-import android.graphics.Path
-import android.media.Image
 import android.net.Uri
 import android.os.Bundle
 import android.text.InputFilter
@@ -18,18 +15,14 @@ import android.widget.*
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.firestore.ktx.firestoreSettings
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.ktx.Firebase
-import com.google.firebase.storage.StorageReference
 import com.google.firebase.storage.ktx.storage
-import com.google.protobuf.Empty
-import kotlinx.android.synthetic.main.list_item.*
+
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.HashMap
-import kotlin.math.log
+
 
 class Record_Fragment : Fragment() {
 
@@ -88,7 +81,7 @@ class Record_Fragment : Fragment() {
             //画像をfirebaseへアップロード
 
             Log.i("画像アップロード＋画面遷移","")
-            //findNavController().navigate(R.id.action_record_Fragment_to_newMainList)
+
 
         }
         //ボタンクリックにより画像をimageviewに取得する
@@ -166,7 +159,7 @@ class Record_Fragment : Fragment() {
             .addOnSuccessListener {
 
                 //104にも記述あり　どちらがよいのか？
-                findNavController().navigate(R.id.action_record_Fragment_to_newMainList)
+                findNavController().navigate(R.id.action_record_Fragment_to_newMainList_User)
                 Toast.makeText(this.activity,"保存しました",Toast.LENGTH_SHORT).show()
             }
             .addOnFailureListener {
@@ -198,9 +191,7 @@ class Record_Fragment : Fragment() {
             ImageUri=data?.data!!
 
             firebaseimage?.setImageURI(ImageUri)
-
         }
-
     }
 
     private fun imageNameget() {
@@ -210,6 +201,4 @@ class Record_Fragment : Fragment() {
         img_name?.setText(fileName).toString()
 
     }
-
-
 }

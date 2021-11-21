@@ -97,12 +97,10 @@ class LoginActivity : AppCompatActivity() {
                     startActivity(intent)
                     finish()
 
-                    // Sign in success, update UI with the signed-in user's information
+                    // ログイン成功時の処理
                     Toast.makeText(baseContext, "ログインしました。", Toast.LENGTH_SHORT).show()
 
                 } else {
-                    // If sign in fails, display a message to the user.
-                    //Log.w(TAG, "createUserWithEmail:failure", task.exception)
                     Toast.makeText(
                         baseContext, "ログイン失敗",
                         Toast.LENGTH_SHORT
@@ -129,9 +127,8 @@ class LoginActivity : AppCompatActivity() {
         val user = auth.currentUser!!
         user.sendEmailVerification()
             .addOnCompleteListener(this) { task ->
-                // Email Verification sent
+
             }
-        // [END send_email_verification]
     }
 
     private fun updateUI(user: FirebaseUser?) {

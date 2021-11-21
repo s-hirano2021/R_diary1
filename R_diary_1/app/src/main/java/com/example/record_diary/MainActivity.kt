@@ -28,12 +28,10 @@ class MainActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var actionBar: ActionBar
 
-    //private lateinit var binding:ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        //binding= ActivityMainBinding.inflate(layoutInflater)
-        //setContentView(binding.root)
         actionBar=supportActionBar!!
         actionBar.title="R.Diary"
 
@@ -41,15 +39,7 @@ class MainActivity : AppCompatActivity() {
 
         //bottomnavigationviewの設定
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
-        /* val navController=findNavController(R.id.fragment)　　動作しなかった
-        bottomNavigationView.setupWithNavController(navController)　動作しなかっった
-        */
         val navController = supportFragmentManager.findFragmentById(R.id.fragment)
-        /*　↓　ツールバーに各画面のタイトル表示させる 　　　エラー調査中
-        val appBarConfiguration= AppBarConfiguration(setOf(R.id.main_List,R.id.record_Fragment,R.id.profile_Fragment))
-        setupActionBarWithNavController(navController,appBarConfiguration)
-         */
-
         bottomNavigationView.setupWithNavController(navController!!.findNavController())
 
     }

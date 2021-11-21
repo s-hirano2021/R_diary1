@@ -30,15 +30,12 @@ class ProfileActivity : AppCompatActivity() {
     private var password=""
     private var name=""
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.new_profile_activity)
 
         // Initialize Firebase Auth
         auth = FirebaseAuth.getInstance()
-        //auth=Firebase.auth
 
         val Bt_sign_prof=findViewById<Button>(R.id.prof_button_create)
 
@@ -85,20 +82,19 @@ class ProfileActivity : AppCompatActivity() {
             .addOnCompleteListener(this) {
                 if (it.isSuccessful) {
                     uptoUserInfo()
-                    //getUserProfile()
+
                     sendEmailVerification()
                     Log.d("profile","新規登録　UID${it.result?.user?.uid}")
                     val intent=Intent(this,MainActivity::class.java)
                     startActivity(intent)
-
-                    // Sign in success, update UI with the signed-in user's information
+                    //登録成功
                     Log.d(TAG, "createUserWithEmail:success")
                     val user = auth.currentUser
                     updateUI(user)
                     //UIDを表示させる。
                     Log.d("ProfileActivity","新規登録UID:${it.result?.user?.uid}")
                 } else {
-                    // If sign in fails, display a message to the user.
+                    // 登録失敗
                     Log.w(TAG, "createUserWithEmail:failure", it.exception)
                     Toast.makeText(
                         baseContext, "Authentication failed.",
@@ -138,7 +134,7 @@ class ProfileActivity : AppCompatActivity() {
     // ユーザがログイン状態かの確認
     public override fun onStart() {
         super.onStart()
-        // Check if user is signed in (non-null) and update UI accordingly.
+        // ユーザーの確認
         val currentUser = auth.currentUser
         if(currentUser != null){
             reload()
@@ -158,17 +154,15 @@ class ProfileActivity : AppCompatActivity() {
             // Check if user's email is verified
             val emailVerified = user.isEmailVerified
 
-            // The user's ID, unique to the Firebase project. Do NOT use this value to
-            // authenticate with your backend server, if you have one. Use
-            // FirebaseUser.getToken() instead.
+            // 一意のユーザーID
+
             val uid = user.uid
         }
-        // [END get_user_profile]
     }
 
 
     private fun sendEmailVerification() {
-        // [START send_email_verification]
+        // 認証メール送信処理
         val user = auth.currentUser!!
         user.sendEmailVerification()
             .addOnCompleteListener(this) { task ->

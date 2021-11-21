@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/my_nav"
-    app:startDestination="@id/newMainList">
+    app:startDestination="@id/newMainList_User">
 
     <fragment
         android:id="@+id/record_Fragment"
@@ -11,19 +11,14 @@
         android:label="fragment_record_"
         tools:layout="@layout/fragment_record_" >
         <action
-            android:id="@+id/action_record_Fragment_to_newMainList"
-            app:destination="@id/newMainList" />
+            android:id="@+id/action_record_Fragment_to_newMainList_User"
+            app:destination="@id/newMainList_User" />
     </fragment>
     <activity
         android:id="@+id/loginActivity"
         android:name="com.example.record_diary.LoginActivity"
         android:label="activity_login"
         tools:layout="@layout/new_login_activity" />
-    <fragment
-        android:id="@+id/newMainList"
-        android:name="com.example.record_diary.NewMainList"
-        android:label="fragment_new_main_list"
-        tools:layout="@layout/fragment_new_main_list" />
     <fragment
         android:id="@+id/newMainList_User"
         android:name="com.example.record_diary.NewMainList_User"
